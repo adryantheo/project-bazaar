@@ -76,17 +76,17 @@ class StandController extends Controller
         // Delete
         $stand = Stand::find($id);
 
-        if(!is_null($stand)){
+        if(is_null($stand)){
             return response()->json('Not Found', 404);
         }
+        else   
+           $success =  $stand->delete();
 
-        $success = $stand->delete();
-
-        if(!success){
+        if(!$success){
             return response()->json('Error Deleting', 500);
-          }
-          else
+        }
+        else
+            return response()->json('Success',200);
 
-          return response()->json('Success',200);
     }
 }
