@@ -13,3 +13,9 @@ Route::get('/product','ProductController@index');
 Route::get('/product/{id}','ProductController@show');
 Route::patch('/product/{id}','ProductController@update');
 Route::delete('/product/{id}','ProductController@destroy');
+
+Route::post('/transaksi','TransaksiController@store');
+Route::get('/transaksi','TransaksiController@index');
+Route::get('/transaksi/{id}','TransaksiController@show');
+Route::patch('/transaksi/{id}','TransaksiController@update');
+Route::delete('/transaksi/{id}','TransaksiController@destroy');
